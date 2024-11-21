@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectChannel", "SelectChannel\SelectChannel.csproj", "{9F55F734-F798-469D-8573-EC4C281FE7B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectChannel.Tests", "SelectChannel.Tests\SelectChannel.Tests.csproj", "{EF719A19-C33C-4137-8252-BF73C96EC21B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F55F734-F798-469D-8573-EC4C281FE7B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F55F734-F798-469D-8573-EC4C281FE7B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F55F734-F798-469D-8573-EC4C281FE7B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F55F734-F798-469D-8573-EC4C281FE7B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF719A19-C33C-4137-8252-BF73C96EC21B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF719A19-C33C-4137-8252-BF73C96EC21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF719A19-C33C-4137-8252-BF73C96EC21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF719A19-C33C-4137-8252-BF73C96EC21B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
