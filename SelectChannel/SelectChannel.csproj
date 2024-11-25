@@ -7,7 +7,7 @@
         <Description>Read from / write to multiple System.Threading.Channel.Channel&lt;T&gt; at the same time</Description>
         <PackageProjectUrl>https://github.com/phipus/SelectChannel</PackageProjectUrl>
         <RepositoryUrl>https://github.com/phipus/SelectChannel</RepositoryUrl>
-        <Version>0.0.3</Version>
+        <Version>0.0.4</Version>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     
