@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace SelectChannel;
 
@@ -11,6 +12,7 @@ public class Select
 {
     private readonly List<ICase> _cases = [];
     private DefaultCase? _defaultCase;
+    private bool _useShuffle = true;
 
     public IReadCase<T> Read<T>(ChannelReader<T> reader)
     {
@@ -33,6 +35,11 @@ public class Select
 
     public async ValueTask Wait(CancellationToken cancellationToken = default)
     {
+        if (_useShuffle)
+        {
+            ShuffleCases();
+        }
+
         if (_defaultCase != null)
         {
             if (_cases.Any(c => c.TryComplete()))
@@ -72,6 +79,11 @@ public class Select
         }
     }
 
+    public void UseShuffle(bool useShuffle)
+    {
+        _useShuffle = useShuffle;
+    }
+
     public static Select Setup()
     {
         return new Select();
@@ -83,5 +95,20 @@ public class Select
         {
             c.SetReady();
         }
+    }
+
+    private void ShuffleCases()
+    {
+        var random = new Random();
+        for (var i = 1; i < _cases.Count; i++)
+        {
+            var index = random.Next(i);
+            SwapListEntries(_cases, i, index);
+        }
+    }
+
+    private static void SwapListEntries<T>(List<T> list, int a, int b)
+    {
+        (list[a], list[b]) = (list[b], list[a]);
     }
 }

@@ -154,6 +154,7 @@ public class WriteTests
         var ch1 = Channel.CreateBounded<int>(1);
         var ch2 = Channel.CreateBounded<long>(1);
         ch1.Writer.Complete();
+        ch2.Writer.TryWrite(10);
 
         // act
         var select = Select.Setup();
@@ -172,6 +173,7 @@ public class WriteTests
         var ch1 = Channel.CreateBounded<int>(1);
         var ch2 = Channel.CreateBounded<long>(1);
         ch1.Writer.Complete();
+        ch2.Writer.TryWrite(10);
 
         // act
         var select = Select.Setup();

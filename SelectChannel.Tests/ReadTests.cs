@@ -73,7 +73,7 @@ public class ReadTests
         ch1Case.IsMatching.Should().BeTrue();
         ch2Case.IsMatching.Should().BeFalse();
     }
-    
+
     [Fact]
     public async Task ReadCompleteDefault()
     {
@@ -87,6 +87,7 @@ public class ReadTests
         var ch1Case = select.Read(ch1.Reader);
         var ch2Case = select.Read(ch2.Reader);
         var defaultCase = select.DefaultCase();
+        select.UseShuffle(false);
         await select.Wait();
 
         // assert
@@ -199,7 +200,7 @@ public class ReadTests
             try
             {
                 ch2Case.IsMatching.Should().BeFalse();
-                
+
                 if (ch1Case.IsMatching)
                 {
                     gotValue = true;
