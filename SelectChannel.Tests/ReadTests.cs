@@ -13,7 +13,7 @@ public class ReadTests
         // arrange
         var ch1 = Channel.CreateUnbounded<int>();
         var ch2 = Channel.CreateUnbounded<long>();
-        await Task.Run(async () =>
+        _ = Task.Run(async () =>
         {
             await Task.Delay(300);
             await ch1.Writer.WriteAsync(42);
