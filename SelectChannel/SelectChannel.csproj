@@ -4,6 +4,15 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Description>Read from / write to multiple System.Threading.Channel.Channel&lt;T&gt; at the same time</Description>
+        <PackageProjectUrl>https://github.com/phipus/SelectChannel</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/phipus/SelectChannel</RepositoryUrl>
+        <Version>0.0.2</Version>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="/" />
+    </ItemGroup>
 
 </Project>
