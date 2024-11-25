@@ -73,6 +73,27 @@ public class ReadTests
         ch1Case.IsMatching.Should().BeTrue();
         ch2Case.IsMatching.Should().BeFalse();
     }
+    
+    [Fact]
+    public async Task ReadCompleteDefault()
+    {
+        // arrange
+        var ch1 = Channel.CreateUnbounded<int>();
+        var ch2 = Channel.CreateUnbounded<long>();
+        ch1.Writer.Complete();
+
+        // act
+        var select = Select.Setup();
+        var ch1Case = select.Read(ch1.Reader);
+        var ch2Case = select.Read(ch2.Reader);
+        var defaultCase = select.DefaultCase();
+        await select.Wait();
+
+        // assert
+        ch1Case.IsMatching.Should().BeTrue();
+        ch2Case.IsMatching.Should().BeFalse();
+        defaultCase.IsMatching.Should().BeFalse();
+    }
 
     [Fact]
     public async Task ReadNonMatching()

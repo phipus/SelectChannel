@@ -48,6 +48,7 @@ internal class WriteCase<T>(ChannelWriter<T> writer, T value) : ICase, IWriteCas
     {
         if (writer.TryWrite(value))
         {
+            _isMatching = true;
             return true;
         }
 
